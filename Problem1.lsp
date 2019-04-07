@@ -48,6 +48,19 @@
     )
 )
 
+(defun tailfib (n a b)
+    (if (eq n 0)
+        b
+        (progn
+            (setf n (- n 1))
+            (setf c b)
+            (setf b (+ a b))
+            (setf a c)
+            (tailfib n a b)
+        )
+    )
+)
+
 (defun fib2 (n)
     (cond
         (
@@ -69,15 +82,4 @@
     )
 )
 
-(defun tailfib (n a b)
-    (if (eq n 0)
-        b
-        (progn
-            (setf n (- n 1))
-            (setf c b)
-            (setf b (+ a b))
-            (setf a c)
-            (tailfib n a b)
-        )
-    )
-)
+
